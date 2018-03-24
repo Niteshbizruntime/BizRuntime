@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        var age = 8;
+
+        if ((age >= 5) && (age <= 6)) {
+            document.write("Go to Kindergarten<br />");
+        } else if (age > 18) {
+            document.write("Go to College<br />");
+        } else {
+            document.write("Go to Grade ", age - 5, "<br />");
+        }
+
+        document.write("true || false = ", true || false, "<br />");
+
+        document.write("!true = ", ! true, "<br />");
+
+        document.write("\"5\" == 5 = ", ("5" == 5), "<br />");
+
+        document.write("\"5\" === 5 = ", ("5" === 5), "<br />");
+
+       
+        switch (age) {
+            case 5:
+            case 6:
+                document.write("Go to Kindergarten<br />");
+                break;
+
+            case 7:
+                document.write("Go to 1st Grade<br />");
+                break;
+
+            default:
+                document.write("Subtract 5 from your age<br />");
+        }
+
+        // Ternary Operator assigns a value based on a condition
+       
+        var canIVote = (age >= 18) ? true : false;
+
+        document.write("Can I Vote : ", canIVote, "<br />");
+        var num=Math.ceil((Math.random() * 10));
+        document.write("Random # (1-10) = ", (num == 1 ? num * 5555 : num * 555), "<br/>");
+       
+        </script>
+</body>
+</html>
