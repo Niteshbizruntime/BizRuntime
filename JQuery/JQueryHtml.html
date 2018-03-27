@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        alert("Text: " + $("#test").text());
+    });
+    $("#btn2").click(function(){
+        alert("HTML: " + $("#test").html());
+    });
+
+    $("#btn3").click(function () {
+        alert("Value: " + $("#test").val());
+    });
+
+    $("#btn4").click(function () {
+        alert($("#w3s").attr("href"));
+    });
+
+    $("#btn5").click(function () {
+        $("#test1").text("Hello world!");
+    });
+    $("#btn6").click(function () {
+        $("#test2").html("<b>Hello world!</b>");
+    });
+    $("#btn7").click(function () {
+        $("#test3").val("Software Engineer");
+    });
+
+    $("#btn8").click(function () {
+        $("#w3s").attr("href", "https://www.youtube.com/");
+    });
+
+    $("#btn9").click(function () {
+        $("p").append(" <b>Appended text</b>.");
+    });
+
+    $("#btn10").click(function () {
+        $("p").remove();
+    });
+});
+    </script>
+</head>
+<body>
+
+    <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+   
+    <p>Name: <input type="text" id="test" value=""></p>
+    <button id="btn3">Show HTML</button>
+
+    <p><a href="https://www.google.com" id="w3s">google.com</a></p>
+    <button id="btn4">Show href Value</button>
+
+    <p id="test1">This is a paragraph.</p>
+    <p id="test2">This is another paragraph.</p>
+
+    <p>Input field: <input type="text" id="test3" value="Nitesh"></p>
+
+    <button id="btn5">Set Text</button>
+    <button id="btn6">Set HTML</button>
+    <button id="btn7">Set Value</button>
+
+    <p><a href="https://www.google.com" id="w3s">Google.com</a></p>
+
+    <button id="btn8">Change href Value</button>
+    <button id="btn9">Append text</button>
+    <button id="btn10">Remove text</button>
+</body>
+</html>

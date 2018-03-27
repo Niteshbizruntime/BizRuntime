@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+
+            $("#first").click(function () {
+                $("#results").text($("form").serialize());
+            });
+
+    $("#click").click(function () {
+        var x = $("form").serializeArray();
+        $.each(x, function(i, field){
+            $("#results").append(field.name + ":" + field.value + "<br/>");
+        });
+    });
+});
+    </script>
+</head>
+<body>
+    <form action="">
+        First name: <input id="firstname" type="text" name="FirstName" value=""><br>
+        Last name: <input type="text" name="LastName" value=""><br>
+    </form>
+    <button id="first">OneTime</button>
+    <button id="click">MultipleTime</button>
+    <div id="results"><br></div>
+</body>
+</html>  

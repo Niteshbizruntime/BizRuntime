@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        p {
+            background: yellow;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+            p.over {
+                background: #ccc;
+            }
+
+        span {
+            color: red;
+        }
+    </style>  
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+$(function(){
+    $("#p1").click(function(){
+        alert("Have A Nice Day");
+    });
+
+    $("p#2").dblclick(function () {
+        $(this).hide();
+    });
+
+    $("#p3").mouseenter(function () {
+        alert("mouseenter");
+    });
+
+    $("#p4").mouseleave(function () {
+        alert("mouseleave");
+    });
+
+    $("#p5").mousedown(function () {
+        alert("mousedown");
+    });
+
+    $("#p6").mouseup(function () {
+        alert("mouseup");
+    });
+
+    $("#p7").hover(function () {
+        alert("hover");
+    },
+function () {
+    alert("Bye! You now leave hover!");
+});
+
+    $("#p8").focus(function () {
+        $(this).css("background-color", "#cccccc");
+    });
+
+    $("#p9").blur(function () {
+        $(this).css("background-color", "#ffffff");
+    });
+
+    $("#p10").on("click", function () {
+        $(this).hide();
+    });
+
+    $("#p11").on({
+        mouseenter: function () {
+            $(this).css("background-color", "lightgray");
+        },
+        mouseleave: function () {
+            $(this).css("background-color", "lightblue");
+        },
+        click: function () {
+            $(this).css("background-color", "yellow");
+        }
+    });
+
+    $("#p12").bind("click", function (event) {
+        var str = "( " + event.pageX + ", " + event.pageY + " )";
+        $("span").text("This is a single click! " + "Hello");
+    });
+    $("#p12").bind("dblclick", function () {
+        $("span").text("This is a double click! " + "Bye");
+    });
+    $("#p12").bind("mouseenter mouseleave", function (event) {
+        $(this).toggleClass("over");
+    });
+});
+    </script>
+</head>
+<body>
+    <p id="p1">click()</p>
+    <p id="p2">dblclick()</p>
+    <p id="p3">mouseenter()</p>
+    <p id="p4">mouseleave()</p>
+    <p id="p5">mousedown()</p>
+    <p id="p6">mouseup()</p>
+    <p id="p7">hover()</p>
+    <input id="p8" type="text" name="name" value="focus()" />
+    <input id="p9" type="text" name="name" value="blur()"/>
+    <p id="p10"> on()</p>
+    <p id="p11">multipleEvent</p>
+    <p id="p12">bind()</p>
+    <span></span>  
+</body>
+</html>  
