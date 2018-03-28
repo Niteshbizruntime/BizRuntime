@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Bin</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.7/dist/global/Rx.js"></script>
+</head>
+<body>
+
+    <p>Observables as generalizations of functions</p>
+    <p id="demo1"></p>
+
+</body>
+</html>
+<script>
+    function foo() {
+        document.writeln('How are you<br/>');
+        return "Fine";
+    }
+   var x = foo.call(); 
+   document.writeln(x+'<br/>');
+    var y = foo.call(); 
+    document.writeln(y+'<br/>');
+    console.log("=========================");
+    var foo = Rx.Observable.create(function (observer) {
+        document.writeln('Hello');
+        observer.next("Welcome");
+        observer.next("To");  
+        observer.next("All"); 
+    });
+    document.writeln('before<br/>');
+    foo.subscribe(function (x) {
+        document.writeln(x+'<br/>');
+    });
+    document.writeln('after<br/>');
+    document.writeln("=========================<br/>");
+    document.writeln("Observables as generalizations of functions<br/>");
+    var generalizations = Rx.Observable.create(function (observer) {
+        document.writeln('Hello<br/>');
+        observer.next('I');
+        observer.next('Am');
+        observer.next('Software');
+        setTimeout(() => {
+            observer.next('Engineer'); 
+        }, 2000);
+    });
+    document.writeln('before<br/>');
+    generalizations.subscribe(function (x) {
+        document.writeln(x+'<br/>');
+    });
+    document.writeln('after<br/>');
+</script>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Bin</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.7/dist/global/Rx.js"></script>
+</head>
+<body>
+   
+    Enter Text: <input type="text" />
+    <p id="p1"></p>
+    <p id="p2"></p>
+</body>
+</html>
+<script>
+    var input = Rx.Observable.fromEvent(document.querySelector('input'), 'input');
+    input.map(event => event.target.value)
+      .subscribe(value => document.getElementById("p1").innerHTML = (value));
+    input.pluck('target', 'value')
+  .subscribe(value =>document.getElementById("p2").innerHTML = (value)); 
+</script>

@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Bin</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.7/dist/global/Rx.js"></script>
+</head>
+<body>
+    <h2 id="h2"></h2>
+</body>
+</html>
+<script>
+    var myObservable = Rx.Observable.create(observer => {
+        observer.next('Hello');
+        setTimeout(() => observer.next('Bye'), 2000);
+       });
+    myObservable.subscribe(value => document.getElementById("h2").innerHTML=(value));
+</script>

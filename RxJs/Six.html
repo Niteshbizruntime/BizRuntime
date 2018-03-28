@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Bin</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.7/dist/global/Rx.js"> </script>
+</head>
+<body>
+
+   
+    <p id="demo">Exception Handling:</p>
+    <p id="p1"></p>
+    
+    <p id="p5"></p>
+
+</body>
+</html>
+<script>
+
+    console.log("=========================");
+    var input = 'Nitesh Bansal';
+    var input1;
+    var observable = Rx.Observable.create(function subscribe(observer) {
+        try {
+            observer.next(1);
+            observer.next(input.length / 2);
+            observer.next(input1.length);
+            
+            
+        } catch (err) {
+            observer.error(err);  
+        }
+        observer.complete();
+    });
+    document.writeln( "Before<br/>");
+    observable.subscribe({
+       
+        next: x => document.writeln( "got value " + x+'<br/>'),
+        error: err => document.writeln('something wrong occurred: ' + err+'<br/>'),
+        complete: () => document.writeln('done'),
+    });
+    document.writeln("After<br/>");
+</script>

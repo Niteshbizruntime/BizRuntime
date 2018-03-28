@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Bin</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.7/dist/global/Rx.js"></script>
+</head>
+<body>
+    <button>Click</button>
+</body>
+</html>
+<script>
+  var button = document.querySelector('button');
+    Rx.Observable.fromEvent(button, 'click')
+        .throttleTime(1000)
+      .subscribe(
+      (event ) =>console.log('Clicked')
+      );
+</script>
