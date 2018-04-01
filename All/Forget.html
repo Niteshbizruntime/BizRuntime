@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Validation1.js"></script>
+    <script src="Json.js"></script>
+    <style>
+        th {
+            color: gold;
+           
+        }
+
+        td {
+            color: red;
+            background-color: darkorchid;
+        }
+
+        div {
+            color: blue;
+            background-color: dimgray;
+        }
+
+        button {color:black;
+            background-color:darkkhaki;
+        }
+
+        input {
+            color: black;
+            background-color: darkkhaki;
+        }
+
+        select {
+            color: blue;
+            background-color: darkkhaki;
+        }
+
+        h1 {
+            color: goldenrod;
+            background-color: black;
+        }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body background="2.bmp">
+
+    <form name="Forget" align="Center" onsubmit="return Call1()">
+        <h1>Forget Password</h1>
+        <hr />
+        <center>
+            <table border="1">
+                <tr>
+                    <th class="tdLabel"><label for="register_name" class="label">Username</label></th>
+                    <td><input type="text" name="name" value="" id="register_name" style="width:160px" minlength="6" maxlength="15" required/></td>
+                </tr>
+                
+                
+                <tr>
+                    <th class="tdLabel"><label for="register_phone" class="label">Mobile No</label></th>
+                    <td>
+                        <input type="text" name="phone" value="" id="phone" pattern="[6-9][0-9]{9}" style="width:160px" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tdLabel"><label for="register_email" class="label">Email</label></th>
+                    <td>
+                        <input type="email" name="email" value="" id="register_email" style="width:160px"   onblur="isEmailOk(this, document.getElementById('email_help'))" required/>
+                    </td>
+                </tr>
+                <tr><td colspan="2"><span id="email_help"></span></td></tr>
+                <tr>
+                    <th class="tdLabel"><label for="con_register_email" class="label">Conform Email</label></th>
+                    <td>
+                        <input type="email" name="conemail" value="" id="con_register_email" style="width:160px" onblur="isSameEmail(this, document.getElementById('conemail_help'))" required/>
+                    </td>
+                </tr>
+                <tr><td colspan="2"><span id="conemail_help"></span></td></tr>
+                <tr>
+                    <th colspan="2">
+
+                        <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback" ></div>
+                      
+
+
+                    </th>
+                </tr>
+                <tr>
+                    <th >
+                        <div align="Center">
+                            <input type="submit" id="register_0" value="Ok"  />
+                        </div>
+                    </th>
+                    <th>
+                        <div align="Center">
+                           <button type="reset">Cancle</button>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div align="Center">
+                            <a href="LoginPage.html">Back</a>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </center>
+    </form>
+   
+</body>
+</html>

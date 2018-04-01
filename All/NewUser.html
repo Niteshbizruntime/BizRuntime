@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+   
+       
+
+    <script src="Validation1.js"></script>
+    <script src="Json.js"></script>
+    <style>
+        th {color:gold;
+            
+        }
+         td {color:red;
+           
+        }
+         div {color:blue;
+            background-color:dimgray;
+        }
+         input {color:black;
+            background-color:darkkhaki;
+        }
+         button {color:black;
+            background-color:darkkhaki;
+        }
+         select {color:blue;
+            background-color:darkkhaki;
+        }
+         h1 {color:goldenrod;
+            background-color:black;
+        }
+    </style>  
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body background="2.bmp">
+    
+        <form  name="New" align="Center" onsubmit="return Call()">
+            <h1>Create Account</h1>
+            <hr/>
+            <center>
+                <table border="1">
+                    <tr>
+                        <th class="tdLabel"><label for="register_name" class="label">Username</label></th>
+                        <td><input type="text" name="name" value="" id="register_name" style="width:170px" minlength="6" maxlength="12" onblur="isTheFieldEmpty(this, document.getElementById('name_help'))" required /></td>
+                    </tr>
+                    <tr><td colspan="2"><span id="name_help"></span></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="register_password" class="label">Password</label></th>
+                        <td><input type="password" id="register_password" name="psw" style="width:170px" maxlength="12" onblur="isPassword(this, document.getElementById('password_help'))" required/></td>
+                    </tr>
+                    <tr><td colspan="2"><span id="password_help"></span></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="con_register_password" class="label">Confirm Password</label></th>
+                        <td><input type="password" name="conpassword" id="con_register_password" style="width:170px"  onblur="isSamePass(this, document.getElementById('conpassword_help'))" required/></td>
+                    </tr>
+                    <tr><td colspan="2"><span id="conpassword_help"></span></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="register_phone" class="label">Mobile No</label></th>
+                        <td>
+                            <input type="text" name="phone" value="" id="phone" maxlength="10" pattern="[7-9][0-9]{9}" style="width:170px" onblur="isPhoneOk(this, document.getElementById('phone_help'))"required/>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"><span id="phone_help"></span></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="register_date" class="label">Date Of Birth</label></th>
+                        <td>
+                            <input type="date" name="date" value="" id="register_date" style="width:170px" required />
+                        </td>
+
+                    </tr>
+                    <tr><td colspan="2"></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="register_email" class="label">Email</label></th>
+                        <td>
+                            <input type="email" name="email" value="" id="register_email" style="width:170px"  onblur="isEmailOk(this, document.getElementById('email_help'))"required />
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"><span id="email_help"></span></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="con_register_email" class="label">Confirm Email</label></th>
+                        <td>
+                            <input type="email" name="conemail" value="" id="con_register_email" style="width:170px" onblur="isSameEmail(this, document.getElementById('conemail_help'))"required />
+                        </td>
+                    </tr>
+                    <tr><th colspan="2"><span id="conemail_help"></span></th></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="register_gender" class="label">Gender</label></th>
+                        <td>
+                            <input type="radio" name="gender" id="register_gender" value="male" checked/>
+                            <label for="register_gendermale" >male</label>
+                            <input type="radio" name="gender" id="register_gender" value="female" />
+                            <label for="register_genderfemale">female</label>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"></td></tr>
+                    <tr>
+                        <th class="tdLabel"><label for="register_country" class="label">Select Country:</label></th>
+                        <td>
+                            <select name="country" id="register_country" style="width:170px"onchange="Other(this.value)">
+                                <option value="india">india</option>
+                                <option value="pakistan">pakistan</option>
+                                <option value="africa">africa</option>
+                                <option value="china">china</option>
+                                <option value="other">other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"><span id="other"></span></td></tr>
+                    <tr>
+                        <th colspan="2">
+
+                            <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                            <!--<input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">-->
+
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th >
+                            <div align="Center">
+                                <input type="submit" id="register_0" value="register"  />
+                            </div>
+                        </th>
+                        <th >
+                            <div align="Center">
+                                <button type="reset">Cancel</button>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <div align="Center">
+                                <a href="LoginPage.html">Back</a>
+                            </div>
+                        </th>
+                    </tr>
+                    
+                </table>
+            </center>
+    </form>
+    
+   
+</body>
+</html>
