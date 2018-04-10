@@ -1,0 +1,32 @@
+
+<h1>Login Page</h1>
+<a routerLink="/register">Create Account</a>
+<form id ="Login" name="Login" #userData="ngForm" (ngSubmit)="check(userData.value)">
+
+   
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                ngModel
+                name="username"
+                required>
+               <span class="help-block" *ngIf="!userData.valid && userData.touched">Enter UserName</span>
+                <br/>
+               
+          
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                ngModel
+                name="password"
+                required>
+                <span class="help-block" *ngIf="!userData.valid && userData.touched">Enter Password</span>
+                <br/>
+         
+          
+          <input type="submit" value="Submit"/>
+        <h2 (click)="check(userData.value)">Click</h2>
+</form>
+<h2 *ngIf="success" routerLink='/home'> </h2>

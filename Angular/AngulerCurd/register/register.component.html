@@ -1,0 +1,102 @@
+<p>
+  register works!
+</p>
+<a routerLink='/'>Back</a>
+
+<h2>New User</h2>
+<form id ="NewUser" name="NewUser" #userData="ngForm" (ngSubmit)="addUser(userData.value)">
+
+   
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                ngModel
+                name="username"
+                required>
+               <span class="help-block" *ngIf="!userData.valid && userData.touched">UserName is invalid!</span>
+                <br/>
+                <label for="firstname">FirstName</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  ngModel
+                  name="firstname"
+                  required>
+                  <span class="help-block" *ngIf="!userData.valid && userData.touched">FirstName is invalid!</span>
+                  <br/>
+                  <label for="lastname">LastName</label>
+                  <input
+                    type="text"
+                    id="lastname"
+                    ngModel
+                    name="lastname"
+                    required>
+                   <span class="help-block" *ngIf="!userData.valid && userData.touched">LastName is invalid!</span>
+                    <br/>
+                   <!-- Gender
+                    <div class="radio" *ngFor="let gender of genders">
+                      <label>
+                        <input
+                          type="radio"
+                          name="gender"
+                          ngModel
+                          [value]="gender"
+                          required>
+                        {{ gender }}
+                      </label>-->
+                      <label for="gender">Gender</label>
+                      <input type="radio" id="gender" name="gender"  value="male" ngModel/>Male   
+                      <input type="radio" id="gender"   name="gender" value="n" ngModel/>Female
+                   
+                      <br/>
+                      <label for="dob">DOB</label>
+                      <input
+                        type="date"
+                        id="dob"
+                        class="form-control"
+                        ngModel
+                        name="dob"
+                        required>
+                       <br/>
+
+                
+                        <label for="phone">Phone</label>
+                        <input
+                          type="text"
+                          id="phone"
+                          ngModel
+                          name="phone"
+                          required
+                          phone
+                          #phone="ngModel">
+                        <span class="help-block" *ngIf="!userData.valid && userData.touched">Please enter a valid Phone Number!</span>
+                        <br/>
+            
+              <label for="email">Mail</label>
+              <input
+                type="email"
+                id="email"
+                ngModel
+                name="email"
+                required
+                email
+                #email="ngModel">
+              <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+              <br/>
+          
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                ngModel
+                name="password"
+                required>
+                <span class="help-block" *ngIf="!userData.valid && userData.touched">Password is invalid!</span>
+                <br/>
+         
+          
+          <input type="submit" value="Submit"/>
+        <h2 (click)="addUser(userData.value)">Click</h2>
+</form>
+<h2 *ngIf="success">Account Create Successfull</h2>

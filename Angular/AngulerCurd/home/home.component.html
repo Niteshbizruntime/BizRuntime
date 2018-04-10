@@ -1,0 +1,36 @@
+
+<p>
+  home Page
+</p>
+<a (click)="fatchData()">ShowData</a>
+<a (click)="logout()">Logout</a>
+<table>
+  <thead>
+    <tr>
+
+        <td>UserName</td>
+      <td>FirstName</td>
+      <td>LastName</td>
+      <td>Gender</td>
+      <td>DOB</td>
+      <td>Phone</td>
+      <td>Email</td>
+      <td>Password</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let data of Data '>
+        <td>{{data.UserName}}</td>
+        <td>{{data.FirstName}}</td>
+        <td>{{data.LastName}}</td>
+        <td>{{data.Gender}}</td>
+        <td>{{data.DOB}}</td>
+        <td>{{data.Phone}}</td>
+        <td>{{data.Email}}</td>
+        <td>{{data.Password}}</td>
+        <td (click)="deleteUser(data.id)"><a>DELETE</a></td>
+    </tr>
+
+  </tbody>
+</table>
